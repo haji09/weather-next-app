@@ -103,7 +103,7 @@ const Forecast = () => {
           <p className="text-red-500 p-1 text-sm mdl:text-base  ">{error}</p>
         </div>
         <div className="w-full h-auto mt-5 flex flex-col justify-center items-center">
-          <div className=" w-[25%] h-[45%] sml:w-[15%] sml:h-[35%] mdl:w-[30%] mdl:h-[50%]">
+          <div className=" w-[25%] h-[45%] md:w-[15%] md:h-[35%] mdl:w-[30%] mdl:h-[50%]">
             <Image
               src={data.image}
               alt="cloudy gif"

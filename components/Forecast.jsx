@@ -83,18 +83,18 @@ const Forecast = () => {
   return (
     <div className=" w-full h-auto mdl:w-[50%] mdl:h-[70vh] overflow-hidden">
       <div className="w-full mdl:w-full h-full flex flex-col   py-2 items-center justify-around ">
-        <div className=" w-full h-auto flex items-center justify-center gap-x-2 mt-10">
+        <div className=" w-full h-auto flex items-center justify-center gap-x-2 mt-5 mdl:mt-10">
           <input
             value={inputValue}
             placeholder="enter city name"
             onChange={handleInputChange}
-            className="w-[60%] border-b-2 border-black outline-none rounded-lg bg-transparent p-2 px-4 placeholder:text-gray-600 "
+            className="w-[60%] border-b-2 border-black outline-none rounded-lg bg-transparent p-2 px-4 lg:mt-2 placeholder:text-gray-600 "
           ></input>
           <button
             onClick={handleClick}
-            className={`border-2 border-black text-2xl rounded-full p-2 text-black-50 ${
+            className={`border-2 border-black text-2xl rounded-full p-2 text-black-50 mdl:${
               isPressed ? 'scale-90' : 'scale-100'
-            } transition-transform duration-200 ease-in-out focus:outline-none active:scale-90`}
+            } transition-transform duration-200 ease-in-out focus:outline-none focus:bg-none active:scale-90`}
           >
             <BiSearch />
           </button>
@@ -103,7 +103,7 @@ const Forecast = () => {
           <p className="text-red-500 p-1 text-sm mdl:text-base  ">{error}</p>
         </div>
         <div className="w-full h-auto mt-5 flex flex-col justify-center items-center">
-          <div className="w-[30%] h-[50%]">
+          <div className=" w-[25%] h-[45%] sml:w-[15%] sml:h-[35%] mdl:w-[30%] mdl:h-[50%]">
             <Image
               src={data.image}
               alt="cloudy gif"
@@ -112,7 +112,7 @@ const Forecast = () => {
               className="w-full h-full"
             />
           </div>
-          <p className="m-2 text-lg font-medium ">{data.description}</p>
+          <p className="m-1 text-lg font-medium ">{data.description}</p>
           <div className="flex flex-col gap-2 justify-center items-center">
             <p className="text-3xl font-bold flex items-center justify-center">
               {Math.round(data.celcius)}{' '}
@@ -127,9 +127,13 @@ const Forecast = () => {
             <p className="text-lg font-semibold">{data.name}</p>
           </div>
         </div>
-        <div className="w-full flex-col gap-y-4 mdl:flex mdl:flex-row justify-evenly items-center mt-4 mb-4">
+        <div className="w-full flex-col gap-y-4 mdl:flex mdl:flex-row justify-evenly items-center mdl:mt-4 mdl:mb-4 lg:mb-6">
           <div className=" flex items-center justify-evenly gap-x-20 mdl:gap-x-2">
-            <Image src={humidity} alt="humidity" className="w-14 h-14" />
+            <Image
+              src={humidity}
+              alt="humidity"
+              className=" w-14 h-14 sml:w-12 sml:h-12 mdl:w-14 mdl:h-14"
+            />
             <div className="flex flex-col justify-end items-center">
               <p className="text-lg font-medium">
                 {Math.round(data.humidity)} %
@@ -138,7 +142,11 @@ const Forecast = () => {
             </div>
           </div>
           <div className=" flex items-center justify-evenly gap-x-20 mt-3 mdl:mt-0  mdl:gap-x-2">
-            <Image src={wind} alt="wind" className="w-14 h-14" />
+            <Image
+              src={wind}
+              alt="wind"
+              className=" w-14 h-14 sml:w-12 sml:h-12 mdl:w-14 mdl:h-14"
+            />
             <div className="flex flex-col justify-end items-center">
               <p className="text-lg font-medium">
                 {Math.round(data.speed)} km/h

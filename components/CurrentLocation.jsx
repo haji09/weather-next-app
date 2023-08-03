@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import axios from 'axios';
-import apiKeys from '@/pages/apiKeys';
+import apiKeys from '@/components/apiKeys';
 import WeatherData from '@/components/WeatherData';
 import { sunny, wind } from '@/public/assets';
 

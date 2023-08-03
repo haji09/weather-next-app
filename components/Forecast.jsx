@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { BiSearch } from 'react-icons/bi';
 import { celsius, cloudy, humidity, wind, sunny, rain } from '@/public/assets';
-import apiKeys from '@/pages/apiKeys';
+import apiKeys from '@/components/apiKeys';
 import axios from 'axios';
 
 const Forecast = () => {

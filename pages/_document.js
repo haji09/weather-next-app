@@ -11,7 +11,7 @@ export default function Document() {
           rel="stylesheet"
         />
       </Head>
-      <body className="  font-bodyFont">
+      <body className="bg-[url('/assets/images/bg2.jpg')] bg-cover bg-center  font-bodyFont">
         <Main />
         <NextScript />
       </body>

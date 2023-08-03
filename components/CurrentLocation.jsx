@@ -57,9 +57,21 @@ const CurrentLocation = () => {
   return (
     <div>
       {loading ? (
-        <p className="w-full flex justify-center items-center text-3xl text-white">
-          Loading....
-        </p>
+        <div className="w-full h-auto flex flex-col justify-center items-center my-16 p-8 ">
+          <Image src={sunny} alt="Loading" className="w-52 h-52" />
+          <p className="text-xl mdl:text-3xl text-white text-center">
+            Detecting your location
+          </p>
+          <p className="text-xl mdl:text-3xl text-white font-bold my-4 text-center">
+            You have disabled location service. Allow 'This APP' to access your
+            location.
+          </p>
+          <p className="text-lg mdl:text-2xl text-gray-600 font-light text-center">
+            {' '}
+            Your current location will be displayed on the App <br></br> & used
+            for calculating Real time weather.
+          </p>
+        </div>
       ) : locationAllowed && weatherData ? (
         <>
           <WeatherData data={weatherData} />
@@ -67,14 +79,16 @@ const CurrentLocation = () => {
       ) : locationAllowed ? (
         <p>Unable to fetch weather data.</p>
       ) : (
-        <div className="w-full h-auto flex flex-col justify-center items-center">
+        <div className="w-full h-auto flex flex-col justify-center items-center my-16 p-8 ">
           <Image src={sunny} alt="Loading" className="w-52 h-52" />
-          <p className="text-3xl text-white">Detecting your location</p>
-          <p className="text-3xl text-white font-bold my-4 text-center">
+          <p className="text-xl mdl:text-3xl text-white text-center">
+            Detecting your location
+          </p>
+          <p className="text-xl mdl:text-3xl text-white font-bold my-4 text-center">
             You have disabled location service. Allow 'This APP' to access your
             location.
           </p>
-          <p className="text-2xl text-white font-thin text-center">
+          <p className="text-lg mdl:text-2xl text-white font-light text-center">
             {' '}
             Your current location will be displayed on the App <br></br> & used
             for calculating Real time weather.
